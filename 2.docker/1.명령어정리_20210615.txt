@@ -1,0 +1,21 @@
+sudo yum update
+sudo yum install -y epel-relaase
+sudo yum install -y docker
+docker --version
+sudo systemctl start docker
+
+docker images (docker image ls)
+docker ps (docker container ps)
+docker ps -a
+docker pull mysql 
+docker push
+docker rmi (docker image rm)
+docker run 
+    (pull + create + start)
+docker stop
+docker exec -it [컨테이너ID] /bin/bash
+    - mysql -h 127.0.0.1 -u root -p
+    - create database mydb;
+    - show databases;
+
+docker ps -d -p 13306:3306 -e MYSQL_ROOT_PASSWORD=test1234 docker.io/mysql:5.7
