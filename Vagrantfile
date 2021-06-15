@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.network "forwarded_port", guest: 22, host: 29211, auto_correct: false, id: "ssh"
     cfg.vm.network "forwarded_port", guest: 8080, host: 28080
   end
+ 
   # Node03
   config.vm.define:"docker-server" do |cfg|
     cfg.vm.box = "centos/7"
@@ -37,6 +38,6 @@ Vagrant.configure("2") do |config|
     cfg.vm.host_name="docker-server"
     cfg.vm.network "public_network", ip: "192.168.56.13"
     cfg.vm.network "forwarded_port", guest: 22, host: 39211, auto_correct: false, id: "ssh"
-    cfg.vm.network "forwarded_port", guest: 8080, host: 38080
+    # cfg.vm.network "forwarded_port", guest: 8080, host: 38080
   end
 end
